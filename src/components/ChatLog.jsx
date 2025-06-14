@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import './ChatLog.css';
 
 const ChatLog = ({ entries, onToggleLike }) => {
+  const localSender = 'Vladimir';
   return (
     <div className="chat-log">
       {entries.map((entry) => (
@@ -14,6 +15,7 @@ const ChatLog = ({ entries, onToggleLike }) => {
           timeStamp={entry.timeStamp}
           liked={entry.liked}
           onLike={() => onToggleLike(entry.id)}
+          isLocal={entry.sender === localSender}
         />
       ))}
     </div>
