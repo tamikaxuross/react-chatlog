@@ -15,11 +15,12 @@ const App = () => {
     });
     setChatMessages(updatedMessages);
   };
-
+  const likedCount = chatMessages.filter((entry) => entry.liked).length;
   return (
     <div id="App">
       <header>
         <h1>Application title</h1>
+        <h2>{likedCount} ❤️s</h2>
       </header>
       <main>
         <ChatLog entries={chatMessages} onToggleLike={toggleLike} />
